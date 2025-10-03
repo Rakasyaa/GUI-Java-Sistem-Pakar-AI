@@ -1,46 +1,48 @@
-# Sistem Pakar Diagnosa Penyakit - Java GUI
+# 🩺 Sistem Pakar Diagnosa Penyakit - Java GUI  
 
-Proyek ini merupakan implementasi **Graphical User Interface (GUI)** menggunakan bahasa pemrograman **Java** untuk membuat aplikasi **sistem pakar** sederhana. Sistem pakar ini bertujuan membantu mendiagnosa penyakit berdasarkan gejala yang dialami pengguna, dengan pendekatan berbasis aturan (rule-based).
+Aplikasi ini adalah implementasi **Sistem Pakar** sederhana berbasis **Java GUI (Swing)**. Tujuannya untuk membantu pengguna melakukan **diagnosa awal penyakit** berdasarkan gejala yang dialami, dengan pendekatan **rule-based (berbasis aturan)**.  
 
-## Fitur Utama
+## ✨ Fitur Utama  
 
-- **Antarmuka Interaktif**: Menggunakan Java Swing untuk menampilkan pertanyaan secara dinamis dan respons pengguna melalui tombol.
-- **Animasi & Suara**: Efek ketik pada pertanyaan dan suara latar untuk meningkatkan pengalaman pengguna.
-- **Logika Diagnosa**: Sistem akan menampilkan hasil diagnosa berdasarkan jawaban pengguna sesuai aturan yang telah ditentukan.
-- **Visualisasi**: Gambar dan ikon yang berubah sesuai interaksi pengguna.
+✅ **Antarmuka Interaktif** – Pertanyaan ditampilkan secara dinamis melalui Java Swing.  
+✅ **Efek Animasi & Suara** – Efek ketik pada teks pertanyaan + musik/efek suara pendukung.  
+✅ **Logika Diagnosa** – Sistem menampilkan hasil diagnosa berdasarkan jawaban pengguna.  
+✅ **Visualisasi Dinamis** – Gambar dan ikon dapat berubah sesuai interaksi.  
 
-## Cara Kerja
+---
 
-1. Pengguna akan menjawab serangkaian pertanyaan terkait gejala penyakit.
-2. Jawaban disimpan dan diproses menggunakan aturan logika.
-3. Hasil diagnosa ditampilkan di akhir sesi.
+## ⚙️ Cara Kerja  
 
-## Struktur File
+1. Pengguna menjawab pertanyaan seputar gejala yang dirasakan.  
+2. Jawaban diproses oleh sistem dengan aturan tertentu.  
+3. Hasil diagnosa ditampilkan dalam antarmuka GUI.  
 
-- `MainFrameView.java`: Kode utama aplikasi GUI dan logika sistem pakar.
-- `assets/`: Folder berisi gambar, ikon, dan file suara yang digunakan aplikasi.
+---
 
-## Prasyarat
+## 📂 Struktur Proyek  
+📦 SistemPakarDiagnosaPenyakit
+┣ 📜 MainFrameView.java // Kode utama GUI + logika sistem pakar
+┣ 📂 assets/ // Aset multimedia
+┃ ┣ 🎵 musik/ // File suara & background music
+┃ ┣ 🖼️ images/ // Gambar & ikon
+┃ ┗ 🔊 sfx/ // Efek suara tambahan
+┗ 📜 README.md // Dokumentasi proye
 
-- Java Development Kit (JDK)
-- Library eksternal: [JLayer](http://www.javazoom.net/javalayer/javalayer.html) untuk pemutaran file MP3
 
-## Menjalankan Aplikasi
+---
 
-1. Pastikan semua file aset (gambar, suara) tersedia di folder yang sesuai.
-2. Kompilasi dan jalankan `MainFrameView.java` menggunakan IDE atau terminal.
+## 🛠️ Prasyarat  
+
+- **Java Development Kit (JDK)** terinstal.  
+- **Library eksternal**: [JLayer](http://www.javazoom.net/javalayer/javalayer.html) → untuk memutar file MP3.  
+
+---
+
+## ▶️ Menjalankan Aplikasi  
+
+1. Pastikan folder `assets/` sudah lengkap (gambar, ikon, musik).  
+2. Kompilasi dan jalankan:  
 
 ```bash
 javac MainFrameView.java
 java MainFrameView
-```
-
-## Catatan
-
-- Proyek ini hanya contoh sederhana dan dapat dikembangkan lebih lanjut sesuai kebutuhan.
-- Pastikan path file aset sesuai dengan struktur folder pada komputer Anda.
-
----
-
-**Author:**  
-Sistem Pakar AI - Semester 5  
