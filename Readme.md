@@ -44,5 +44,5 @@ Aplikasi ini adalah implementasi **Sistem Pakar** sederhana berbasis **Java GUI 
 2. Kompilasi dan jalankan:  
 
 ```bash
-javac MainFrameView.java
-java MainFrameView
+javac -cp ".;lib/jl1.0.1.jar" .\*.java
+java -cp "bin;lib\jl1.0.1.jar" App
