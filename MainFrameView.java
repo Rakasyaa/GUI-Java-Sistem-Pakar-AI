@@ -11,6 +11,7 @@ public class MainFrameView extends JFrame {
     Random rand = new Random();
     private Thread soundThread;
     private Player typingPlayer;
+    private Timer timer;
 
     JLabel pertanyaan;  
     JLabel Labelorang;
@@ -18,7 +19,7 @@ public class MainFrameView extends JFrame {
     private String currentText = "";
     private int index = 0;
     private int index_pertanyaan = 0;
-    private Timer timer;
+    private boolean isTyping = false;
 
     boolean[] L = new boolean[26]; // index 1..25
 
@@ -90,7 +91,7 @@ public class MainFrameView extends JFrame {
 
         // Daftar pertanyaan
         String[] pertanyaan = {
-            "Halo, saya adalah dokter virtual. Saya akan membantu mendiagnosa penyakit Anda berdasarkan gejala yang Anda alami. Silakan jawab pertanyaan berikut dengan jujur ya!",
+            "<html><body style='width: 800px'>Halo, saya adalah dokter virtual. Saya akan membantu mendiagnosa penyakit Anda berdasarkan gejala yang Anda alami. Silakan jawab pertanyaan berikut dengan jujur ya!</body></html>", // Pembuka
             "Apakah Anda mengalami BAB cair lebih dari 3x sehari?",   // L01
             "Apakah Anda merasa lesu?",                              // L02
             "Apakah nafsu makan berkurang?",                         // L03
@@ -154,6 +155,7 @@ public class MainFrameView extends JFrame {
         ButtonSALAH.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (isTyping) return; // Abaikan klik jika teks sedang diketik
                 System.out.println("salah"); // cek apakah klik terdeteksi
                 if (index_pertanyaan < pertanyaan.length - 1) {
                     index_pertanyaan++;
@@ -174,6 +176,7 @@ public class MainFrameView extends JFrame {
         ButtonBenar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (isTyping) return; // Abaikan klik jika teks sedang diketik
                 System.out.println("benar"); // cek apakah klik terdeteksi
                 if (index_pertanyaan < pertanyaan.length - 1) {
                     index_pertanyaan++;
@@ -222,20 +225,22 @@ public class MainFrameView extends JFrame {
         }
     }
 
-    public void playText(String text) {
-        String ftext = "<html><body style='width: 800px'>" + text + "</body></html>";
+    public void playText(String ftext) {
+        // String ftext = "<html><body style='width: 800px'>" + text + "</body></html>";
         index = 0;
         currentText = "";
 
         // mulai efek ketik (suara)
         playSound("dialog.mp3");
-
+        isTyping = true;
+        
         timer = new Timer(30, e -> { // 30ms antar karakter
             currentText += ftext.charAt(index);
             pertanyaan.setText(currentText);
             index++;
-
+            
             if (index >= ftext.length()) {
+                isTyping = false;
                 timer.stop();
                 stopSound(); // stop suara setelah teks selesai
             }
