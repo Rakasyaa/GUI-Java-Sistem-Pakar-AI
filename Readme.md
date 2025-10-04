@@ -19,14 +19,17 @@ Aplikasi ini adalah implementasi **Sistem Pakar** sederhana berbasis **Java GUI 
 
 ---
 
-## 📂 Struktur Proyek  
-📦 SistemPakarDiagnosaPenyakit
-┣ 📜 MainFrameView.java // Kode utama GUI + logika sistem pakar
-┣ 📂 assets/ // Aset multimedia
-┃ ┣ 🎵 musik/ // File suara & background music
-┃ ┣ 🖼️ images/ // Gambar & ikon
-┃ ┗ 🔊 sfx/ // Efek suara tambahan
-┗ 📜 README.md // Dokumentasi proye
+## 📂 Struktur Proyek
+
+```
+SistemPakarDiagnosaPenyakit/
+├── MainFrameView.java      # Kode utama GUI + logika sistem pakar
+├── assets/                # Aset multimedia
+│   ├── musik/             # File suara & background music
+│   ├── images/            # Gambar & ikon
+│   └── sfx/               # Efek suara tambahan
+└── README.md              # Dokumentasi proyek
+```
 
 
 ---
