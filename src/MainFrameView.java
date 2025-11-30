@@ -25,7 +25,7 @@ public class MainFrameView extends JFrame {
 
 
     public MainFrameView() {
-        setTitle("icik icik");
+        setTitle("Tugas GUI - Sistem Pakar AI");
         setSize(1280, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
